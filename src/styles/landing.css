@@ -1,0 +1,77 @@
+body, html {
+    height: 100vh;
+}
+
+#landing-page {
+    background-image: url("../assets/landing-image.jfif");
+    height: 70vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: left;
+}
+
+h1 {
+    padding-top: 30vh;
+}
+
+h1, h4 {
+    font-size: 5vh;
+}
+
+#catchphrase {
+    padding: 0 10vh;
+}
+
+#landing-main {
+    background-color: #d3d3d361;
+    height: auto;
+    padding: 0;
+}
+
+/*#myprofile-page {
+    background-image: url("https://www.clearpointstrategy.com/cdn-cgi/image/width=1024,quality=90,format=auto,onerror=redirect/wp-content/uploads/2018/01/The-Balanced-Scorecard-Customer-Perspective.jpg");
+    height: 70vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+    text-align: left;
+}
+*/
+#myprofile-page {
+    background-image: url("https://images.ctfassets.net/1nw0m35kh5t7/17sYBaPNGLmYv30MN4nYIJ/91a4f049b23f496b48d5d3be063de442/Online-booking-options-can-get-you-more-clients-4-3?fm=jpg&fl=progressive&w=1920");
+    height: 70vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+    text-align: left;
+}
+
+#mybooking-page {
+    background-image: url("https://img.freepik.com/free-photo/male-hand-holding-magnifying-glass-search-icon-blue-background-concept-search-engine-optimization-customer-support-browsing-internet-data-information-networking-concept_150455-6370.jpg?size=626&ext=jpg");
+    height: 70vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+    text-align: left;
+}
+
+
+
+#login-page {
+    background-image: url("https://images.all-free-download.com/images/graphicwebp/modern_city_background_contemporary_highrises_sketch_6845425.webp");
+    height: 70vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: lightblue;
+    text-align: left;
+}
+
+#txt-color {
+    color: lightblue;
+}
