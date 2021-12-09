@@ -2,7 +2,7 @@
 import axios from 'axios';
 import UserServiceApi from './UserServiceApi';
 require('dotenv').config();
-const api_url = process.env.server_url || "https://pure-river-82205.herokuapp.com/api/bookings";
+const api_url = process.env.server_url || "http://localhost:3001/api/bookings";
 
 class BookingServiceApi {
     getNextBooking() {

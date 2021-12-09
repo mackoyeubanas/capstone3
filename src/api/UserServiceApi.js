@@ -2,7 +2,7 @@
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 
-const api_url = process.env.server_url || "https://pure-river-82205.herokuapp.com/api/users";
+const api_url = process.env.server_url || "http://localhost:3001/api/users";
 
 // for user JWT storage
 export const TOKEN_SESSION_ATTRIBUTE_NAME = 'token';
