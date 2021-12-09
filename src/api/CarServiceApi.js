@@ -1,7 +1,7 @@
 /* Car service APIs */
 import axios from 'axios';
 require('dotenv').config();
-const api_url = process.env.server_url || "http://localhost:3001/api/cars";
+const api_url = process.env.server_url || "https://pure-river-82205.herokuapp.com/";
 
 class CarServiceApi {
     createNewCar(newCar) {
