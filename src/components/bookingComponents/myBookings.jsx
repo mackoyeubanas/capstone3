@@ -122,7 +122,7 @@ class MyBookingPage extends Component {
                                         </>
                                     )}
                                 </td>
-                                <td>${booking.cost}</td>
+                                <td>Php{booking.cost}</td>
                                 <td>
                                     {this.state.locations.map(location =>
                                         <>
