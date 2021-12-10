@@ -60,19 +60,21 @@ class ViewBookingPage extends Component {
             });
     }
 
-    mapOnMarkerClick = (props, marker) =>
-        this.setState({
-            selectedPlace: props,
-            activeMarker: marker,
-            showingInfoWindow: true,
-        });
+  onMarkerClick = (props, marker, e) =>
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true
+    });
 
-    mapOnMapClick = () =>
-        this.setState({
-            showingInfoWindow: false,
-            selectedPlace: {},
-            activeMarker: {}
-        });
+  onClose = props => {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      });
+    }
+  };
 
     componentDidMount() {
         this.getBookingDetails();

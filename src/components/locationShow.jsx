@@ -54,19 +54,21 @@ class LocationShowPage extends Component {
         });
     }
 
-    mapOnMarkerClick = (props, marker) =>
+         onMarkerClick = (props, marker, e) =>
         this.setState({
-            selectedPlace: props,
-            activeMarker: marker,
-            showingInfoWindow: true,
+          selectedPlace: props,
+          activeMarker: marker,
+          showingInfoWindow: true
         });
 
-    mapOnMapClick = () =>
-        this.setState({
+      onClose = props => {
+        if (this.state.showingInfoWindow) {
+          this.setState({
             showingInfoWindow: false,
-            selectedPlace: {},
-            activeMarker: {}
-        });
+            activeMarker: null
+          });
+        }
+      };
 
     render() {
         return (

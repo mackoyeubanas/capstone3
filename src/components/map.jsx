@@ -5,6 +5,12 @@ import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 import LocationServiceApi from '../api/LocationServiceApi.js';
 import "../styles/map.css";
 
+
+const mapStyles = {
+  width: '100%',
+  height: '100%'
+};
+
 export class MapContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -45,58 +51,59 @@ export class MapContainer extends React.Component {
     });
   }
 
-  mapOnMarkerClick = (props, marker) =>
+  onMarkerClick = (props, marker, e) =>
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
-      showingInfoWindow: true,
+      showingInfoWindow: true
     });
 
-  mapOnMapClick = () =>
-    this.setState({
-      showingInfoWindow: false,
-      selectedPlace: {},
-      activeMarker: {}
-    });
+  onClose = props => {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      });
+    }
+  };
 
   render() {
     return (
       <div style={{ height: "100vh" }}>
-        <Map google={this.props.google}
-          initialCenter={{
+         <Map
+        google={this.props.google}
+        zoom={14}
+        style={mapStyles}
+        initialCenter={{
             lat: 14.5907332,
             lng: 120.9809674
-          }}
-          zoom={14}
-          onClick={this.mapOnMapClick}>
-
-          {this.state.locations.map(marker => {
-            return (
-              <Marker
-                id={marker.id}
-                name={marker.name}
-                address={marker.address}
-                onClick={this.mapOnMarkerClick}
-                position={{ lat: marker.lat, lng: marker.lng }}
-              />)
-          })}
-
-          <InfoWindow
-            onClose={this.onInfoWindowClose}
-            marker={this.state.activeMarker}
-            visible={this.state.showingInfoWindow}>
-            <div id="info-window">
-              <h2>{this.state.selectedPlace.name}</h2>
-              <p>{this.state.selectedPlace.address}</p>
-              <a href={"/locations/" + this.state.selectedPlace.id}>Check out this location</a>
-            </div>
-          </InfoWindow>
-        </Map>
+        }}
+      >
+        <Marker
+          onClick={this.onMarkerClick}
+          name={'Pahatid Express'}
+        />
+        <InfoWindow
+          marker={this.state.activeMarker}
+          visible={this.state.showingInfoWindow}
+          onClose={this.onClose}
+        >
+          <div>
+            <h4>{this.state.selectedPlace.name}</h4>
+          </div>
+        </InfoWindow>
+      </Map>
       </div>
     );
   }
 }
 
+
+
 export default GoogleApiWrapper({
   apiKey: process.env.REACT_APP_API_KEY
 })(MapContainer);
+
+
+
+            
