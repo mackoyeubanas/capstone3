@@ -6,7 +6,7 @@ export default class overview extends Component {
     render() {
         const userData = UserServiceApi.getLoggedInUserDetails();
         return (
-            <div className="container">
+            <div className="container" id="overview-page" fluid>
                 <h2>My Profile</h2>
                 <strong>First name: </strong>{userData.firstname} <br></br>
                 <strong>Last name: </strong>{userData.lastname} <br></br>

@@ -75,3 +75,14 @@ h1, h4 {
 #txt-color {
     color: lightblue;
 }
+
+
+#overview-page {
+    background-image: url("https://c4.wallpaperflare.com/wallpaper/34/502/377/geometric-gray-background-wallpaper-preview.jpg");
+    height: 70vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+    text-align: left;
+}
