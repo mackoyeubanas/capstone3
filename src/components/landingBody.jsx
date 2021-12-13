@@ -11,6 +11,9 @@ const navWhenSelectedStyle = {
     borderBottom: "4px solid #009bde"
 };
 
+
+
+
 export default class landingBody extends Component {
     constructor(props){
         super(props);
@@ -24,6 +27,9 @@ export default class landingBody extends Component {
             component: event.target.innerHTML
         });
     }
+
+
+
 
     render() {
         const { component } = this.state;

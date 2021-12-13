@@ -15,6 +15,18 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <style>
+  #fb-root > div.fb_dialog.fb_dialog_advanced.fb_shrink_active {
+     right: initial !important;
+     left: 18pt;
+     z-index: 9999999 !important;
+  }
+  .fb-customerchat.fb_invisible_flow.fb_iframe_widget iframe {
+     right: initial !important;
+     left: 18pt !important;
+  }
+</style>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -29,6 +41,32 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <div class="fb-customerchat"
+ page_id="<101139399100859>"
+ minimized="true">
+</div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '912333495590130',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.11'
+    });
+  };
+
+(function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
